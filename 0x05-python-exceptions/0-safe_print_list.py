@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-def safe_print_list(my_list, x):
+def safe_print_list(my_list=[], x=0):
     new_list = 0
-    for elem in my_list:
-        if new_list == x:
-            break
-        new_list += 1
-        print(elem,end="")
+    for i in range x:
         try:
             print(f"{my_list[elem]}", end="")
+            new_list += 1
         except IndexError:
             break
-    print("")
+    print()
     return new_list
