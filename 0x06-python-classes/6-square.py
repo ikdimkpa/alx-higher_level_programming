@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""My square module"""
+
+
 class Square:
-    # defines a square
+    """defines a square"""
 
     def __init__(self, size=0, position=(0, 0)):
         """Create a Square
@@ -61,7 +64,7 @@ class Square:
         return self.__size * self.__size
 
     def pos_print(self):
-        # returns the position in spaces
+        """returns the position in spaces"""
         pos = ""
         if self.size == 0:
             return "\n"
@@ -76,5 +79,5 @@ class Square:
         return pos
 
     def my_print(self):
-        # print the square in position
+        """print the square in position"""
         print(self.pos_print(), end='')
