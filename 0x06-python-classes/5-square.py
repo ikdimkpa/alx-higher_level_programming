@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+# 0-square.py by UDO INNOCENT
+"""A module that defines a square """
+
+
 class Square:
     """A class that represents a square"""
 
@@ -20,7 +24,7 @@ class Square:
 
     @property
     def size(self):
-        # Retrieves size of square
+        """Retrieves size of square"""
 
         return self.__size
 
