@@ -2,6 +2,7 @@
 USE hbtn_0d_usa;
 
 SELECT cities.id, cities.name, states.name
-FROM cities, states
-WHERE cities.state_id = states.id
+FROM cities
+LEFT JOIN states
+ON states_id = cities.state.id
 ORDER BY cities.id ASC;
