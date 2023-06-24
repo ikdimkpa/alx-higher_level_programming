@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 """
-Script that adds the State object
-`Louisiana` to the database `hbtn_0e_6_usa`.
+Script that prints all City objects
+from the database `hbtn_0e_14_usa`.
 """
 
 from sys import argv
 from model_state import State, Base
+from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Access to the database and get a state
+    Access to the database and get the cities
     from the database.
     """
 
@@ -23,9 +24,10 @@ if __name__ == "__main__":
 
     session = Session()
 
-    new_state = State(name="Louisiana")
-    session.add(new_state)
-    session.commit()
+    results = session.query(City, State).join(State)
 
-    print('{0}'.format(new_state.id))
+    for city, state in results.all():
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
+
+    session.commit()
     session.close()
