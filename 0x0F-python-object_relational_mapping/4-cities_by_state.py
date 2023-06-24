@@ -1,36 +1,24 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
+"""Lists all cities from database hbtn_0e_4_usa"""
 
-# Get the MySQL username, password, and database name from command-line arguments
-username = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
+from sys import argv
+import MySQLdb as dataBase
 
-# Connect to the MySQL server
 if __name__ == '__main__':
-    connect_db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            passwd=password,
-            db=database
-            )
-
-# Create a cursor object to execute SQL queries
-cursor = connect_db.cursor()
-
-# Execute the query to retrieve all cities
-query = "SELECT * FROM cities ORDER BY id"
-cursor.execute(query)
-
-# Fetch all the rows returned by the query
-rows = cursor.fetchall()
-
-# Print the cities in the desired format
-for row in rows:
-    print(row)
-
-# Close the cursor and database connection
-cursor.close()
-connect_db.close()
+    # naming the database object after the name of the database expected
+    hbtn_0e_4_usa = dataBase.connect(host="localhost", port=3306,
+                                     user=argv[1], passwd=argv[2],
+                                     db=argv[3], charset="utf8")
+    # naming the cursor after the queries to be executed
+    all_cities = hbtn_0e_4_usa.cursor()
+    query = "SELECT cities.id, cities.name, states.name " \
+            "FROM `cities` " \
+            "JOIN `states` " \
+            "ON cities.state_id = states.id " \
+            "ORDER BY cities.id ASC"
+    all_cities.execute(query)
+    allCities = all_cities.fetchall()
+    for row in allCities:
+        print(row)
+    all_cities.close()
+    # dataBase.close()
