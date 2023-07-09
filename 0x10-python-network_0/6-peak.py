@@ -10,9 +10,9 @@ def find_peak(list_of_integers):
         return None
 
     start = 0
-    center = len(list_of_integers) - 1
+    stop = len(list_of_integers) - 1
 
-    while start < center:
+    while start < stop:
         center = (start + stop) // 2
 
         if list_of_integers[center] < list_of_integers[center + 1]:
