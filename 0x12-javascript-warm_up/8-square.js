@@ -8,7 +8,7 @@ if (!size) {
   while (index < size) {
 	  length = '';
     for (let index = 0; index < size; index++) {
-	    length += 'x';
+	    length += 'X';
     }
 	  console.log(length);
     index++;
