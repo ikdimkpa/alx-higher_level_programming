@@ -1,0 +1,7 @@
+-- A script that creates the MySQL server user user_0d_1.  
+-- The user_0d_1 password should be set to user_0d_1_pwd
+CREATE USER IF NOT EXISTS 'dimkpadgr8@ubuntu20.04.6';
+SET PASSWORD FOR 'root' = 'IAMthegreat1';
+GRANT ALL PRIVILEGES
+ON .
+TO 'dimkpadgr8@ubuntu.20.04.6';
