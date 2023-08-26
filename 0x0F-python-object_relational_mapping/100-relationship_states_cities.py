@@ -20,5 +20,3 @@ if __name__ == "__main__":
 
     session.add(State(name='California', cities[City(name='San Francisco')]))
     session.commit()
-
-    session.close()
