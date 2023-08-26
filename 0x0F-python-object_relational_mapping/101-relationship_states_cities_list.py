@@ -24,5 +24,3 @@ if __name__ == "__main__":
         print("{}:{}".format(state.id, state.name))
         for city in states.city:
             print("  {}:{}".format(city.id, city.name))
-
-    session.close()
