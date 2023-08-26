@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Create a model for the city table
+This script create a model for the city table
 """
 from sqlalchemy import Column, String, Integer, ForeignKey
 from model_state import Base

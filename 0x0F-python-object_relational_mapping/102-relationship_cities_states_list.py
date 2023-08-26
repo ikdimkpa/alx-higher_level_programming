@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-
+This script lists all State objects and corresponding City objects
+    contained in the database hbtn_0e_101_usa
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm impoer sessionmaker
