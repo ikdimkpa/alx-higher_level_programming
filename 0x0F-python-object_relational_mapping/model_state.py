@@ -14,6 +14,5 @@ class State(Base):
     instance Base = declarative_base():"""
 
     __tablename__ = "states"
-    id = Column(Integer, primary_key = True, autoincrement = True)
-    name = Column(String (128), nullable = False)
-
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(128), nullable=False)
