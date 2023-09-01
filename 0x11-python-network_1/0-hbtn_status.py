@@ -10,6 +10,6 @@ if __name__ == "__main__":
         html = response.read()
 
     print("Body response:")
-    print(f"\t- type: {type(html)}")
+    print("\t- type: {}".format(type(html))
     print(f"\t- content: {html}")
-    print("\t- utf-8 content: {html.decode('utf-8')}")
+    print("\t- utf-8 content: {}".format(html.decode('utf8')))
